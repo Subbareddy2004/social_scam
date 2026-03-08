@@ -39,7 +39,11 @@ venv/
 env/
 
 # ML model artifacts
-ml_model/bert_scam_model/model.safetensors
+ml_model/text_moderation_model/model.safetensors
+ml_model/text_moderation_model.zip
+ml_model/*.zip
+ml_model/*.csv
+ml_model/__pycache__/
 
 # Jupyter
 .ipynb_checkpoints/

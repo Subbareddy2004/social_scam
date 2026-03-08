@@ -74,10 +74,12 @@ const AdminLayout = () => {
                                     Scam Detection
                                 </span>
                             </div>
-                            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', lineHeight: 1.5 }}>
-                                ML model: BERT
+                            <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', lineHeight: 1.7 }}>
+                                ML model: RoBERTa
                                 <br />
-                                Threshold: 70%
+                                Accuracy: 96%
+                                <br />
+                                Threshold: 60%
                             </div>
                         </div>
                     </div>

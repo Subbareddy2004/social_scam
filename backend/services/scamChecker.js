@@ -15,15 +15,21 @@ const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:8000/pred
  */
 export const checkForScam = async (text, imageUrl = null) => {
     console.log('🔍 Scam check starting for text:', text?.substring(0, 80) + '...');
+    console.log('🌐 ML Service URL:', ML_SERVICE_URL);
 
     try {
+        const requestBody = JSON.stringify({ text, image_url: imageUrl });
+        console.log('📤 Sending to ML service:', requestBody.substring(0, 200));
+
         // Call the ML service — allow 30 seconds for CPU-based BERT inference
         const response = await fetch(ML_SERVICE_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, image_url: imageUrl }),
+            body: requestBody,
             signal: AbortSignal.timeout(30000), // 30 second timeout for CPU inference
         });
+
+        console.log('📥 ML service HTTP status:', response.status);
 
         if (response.ok) {
             const result = await response.json();
@@ -34,10 +40,12 @@ export const checkForScam = async (text, imageUrl = null) => {
                 reason: result.reason || 'ML analysis complete',
             };
         } else {
-            console.log('⚠️  ML service returned status:', response.status);
+            const errorText = await response.text();
+            console.log('⚠️  ML service returned status:', response.status, 'body:', errorText);
         }
     } catch (error) {
-        console.log('⚠️  ML service not available:', error.message, '— using fallback check');
+        console.error('⚠️  ML service ERROR:', error.code || error.name, error.message);
+        console.error('    Full error:', error);
     }
 
     // ─── Fallback: keyword + URL pattern check ───
