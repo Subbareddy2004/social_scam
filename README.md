@@ -1,7 +1,11 @@
 <p align="center">
   <h1 align="center">🛡️ Social Safe — Social Media Scam Detection Platform</h1>
   <p align="center">
+<<<<<<< HEAD
     An AI-powered social media platform that automatically detects and filters spam, scam, and toxic content using a fine-tuned RoBERTa model, multimodal AI analysis (text + image via OpenRouter/Gemini), and rule-based pattern matching.
+=======
+    An AI-powered social media platform that automatically detects and filters spam, scam, and toxic content using a fine-tuned RoBERTa model combined with rule-based pattern matching.
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
   </p>
 </p>
 
@@ -11,8 +15,11 @@
   <img src="https://img.shields.io/badge/Python-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/Supabase-Database-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
   <img src="https://img.shields.io/badge/RoBERTa-ML_Model-FF6F00?style=for-the-badge&logo=pytorch&logoColor=white" />
+<<<<<<< HEAD
   <img src="https://img.shields.io/badge/OpenRouter-AI_API-6366F1?style=for-the-badge&logo=openai&logoColor=white" />
   <img src="https://img.shields.io/badge/Gemini-Multimodal_AI-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+=======
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 </p>
 
 ---
@@ -43,11 +50,18 @@
 
 ## 🔍 Overview
 
+<<<<<<< HEAD
 **Social Safe** is a full-stack social media platform designed to combat online scams, spam, and toxic content. Every post submitted by a user is automatically analyzed through a **triple-layer detection pipeline** that combines:
 
 1. **ML-based detection** — A fine-tuned **RoBERTa** (Robustly optimized BERT) transformer model trained on 160,000+ samples from SMS Spam and Jigsaw Toxic Comment datasets.
 2. **AI multimodal analysis** — **Gemini AI** (via OpenRouter) analyzes both **text AND images** for scam indicators like fake QR codes, phishing screenshots, fraudulent logos, and visual manipulation.
 3. **Pattern-based detection** — Rule-based checks for phishing URLs, suspicious domains, scam keywords, and known scam phrases.
+=======
+**Social Safe** is a full-stack social media platform designed to combat online scams, spam, and toxic content. Every post submitted by a user is automatically analyzed through a **hybrid detection pipeline** that combines:
+
+1. **ML-based detection** — A fine-tuned **RoBERTa** (Robustly optimized BERT) transformer model trained on 160,000+ samples from SMS Spam and Jigsaw Toxic Comment datasets.
+2. **Pattern-based detection** — Rule-based checks for phishing URLs, suspicious domains, scam keywords, and known scam phrases.
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 
 Posts flagged as suspicious are held for **admin review** before appearing in the public feed, ensuring a safe community environment.
 
@@ -69,6 +83,7 @@ Posts flagged as suspicious are held for **admin review** before appearing in th
 - **User profile** with post history
 
 ### 🤖 AI-Powered Content Moderation
+<<<<<<< HEAD
 - **RoBERTa transformer model** fine-tuned for spam/scam classification (text-only)
 - **Gemini AI multimodal analysis** via OpenRouter — analyzes both **text AND images** together
 - **Image scam detection** — Catches fake QR codes, phishing screenshots, fraudulent logos, impersonation visuals
@@ -79,6 +94,14 @@ Posts flagged as suspicious are held for **admin review** before appearing in th
 - **Confidence scoring** with configurable thresholds (default: 0.6)
 - **Auto-retry with exponential backoff** on AI rate limits (3 retries: 2s, 4s, 8s)
 - **Graceful fallback** — Falls back to ML-only, then pattern-only if services are unavailable
+=======
+- **RoBERTa transformer model** fine-tuned for spam/scam classification
+- **Hybrid detection** combining ML predictions with pattern rules
+- **Phishing detection** for suspicious URLs, domains, and TLDs
+- **Keyword matching** for known scam/spam phrases
+- **Confidence scoring** with configurable thresholds (default: 0.6)
+- **Graceful fallback** to pattern-only mode if ML service is unavailable
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 
 ### 👨‍💼 Admin Dashboard
 - **Dedicated admin login** (`/admin/login`) separate from user login
@@ -111,6 +134,7 @@ Posts flagged as suspicious are held for **admin review** before appearing in th
 │   └─────────────────────────────┘   │    Storage (Images)     │ │
 │                  │                   └─────────────────────────┘ │
 │                  │ HTTP                                          │
+<<<<<<< HEAD
 │   ┌──────────────▼──────────────────────────────────────┐       │
 │   │          ML Service (FastAPI) — Port 8000           │       │
 │   │  ┌─────────────────┐   ┌────────────────────────┐   │       │
@@ -120,6 +144,13 @@ Posts flagged as suspicious are held for **admin review** before appearing in th
 │   │  └─────────────────┘   └────────────────────────┘   │       │
 │   │           Combined Score → is_scam + confidence      │       │
 │   └──────────────────────────────────────────────────────┘       │
+=======
+│   ┌──────────────▼──────────────┐                               │
+│   │    ML Service (FastAPI)     │                               │
+│   │    RoBERTa Model · PyTorch  │                               │
+│   │    Runs on port 8000        │                               │
+│   └─────────────────────────────┘                               │
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -150,17 +181,24 @@ Posts flagged as suspicious are held for **admin review** before appearing in th
 | Multer | 2.0 | File upload handling |
 | CORS | 2.8 | Cross-origin requests |
 
+<<<<<<< HEAD
 ### ML Model & AI
+=======
+### ML Model
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 | Technology | Version | Purpose |
 |---|---|---|
 | Python | 3.11+ | ML runtime |
 | FastAPI | 0.109 | ML API server |
 | PyTorch | 2.1 | Deep learning framework |
 | Transformers (HuggingFace) | 4.36 | RoBERTa model |
+<<<<<<< HEAD
 | OpenRouter API | — | AI gateway (Gemini, GPT, Claude) |
 | Gemini 2.0 Flash | — | Multimodal text + image analysis |
 | httpx | 0.27+ | Async HTTP client for AI API calls |
 | python-dotenv | 1.0+ | Environment variable management |
+=======
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 | Uvicorn | 0.27 | ASGI server |
 | Modal | — | Cloud GPU training (A100) |
 
@@ -226,11 +264,18 @@ social_scam/
 │   ├── vite.config.js
 │   └── package.json
 │
+<<<<<<< HEAD
 ├── ml_model/                   # Python ML + AI service
 │   ├── api.py                  # FastAPI server (RoBERTa + OpenRouter/Gemini AI)
 │   ├── train_modal.py          # Model training script (Modal + A100 GPU)
 │   ├── requirements.txt        # Python dependencies
 │   ├── .env                    # OpenRouter API key & model config
+=======
+├── ml_model/                   # Python ML service
+│   ├── api.py                  # FastAPI prediction server
+│   ├── train_modal.py          # Model training script (Modal + A100 GPU)
+│   ├── requirements.txt        # Python dependencies
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 │   └── text_moderation_model/  # Trained RoBERTa model files
 │       ├── config.json
 │       ├── merges.txt
@@ -285,12 +330,21 @@ pip install -r requirements.txt
 
 ### Environment Variables
 
+<<<<<<< HEAD
 **Backend** — Create `backend/.env`:
+=======
+Create a `.env` file in the `backend/` directory using the provided template:
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 
 ```bash
 cp backend/.env.example backend/.env
 ```
 
+<<<<<<< HEAD
+=======
+Then update the values:
+
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 ```env
 # Supabase Configuration
 SUPABASE_URL=your_supabase_project_url
@@ -304,6 +358,7 @@ PORT=5000
 
 # ML Service URL (Python ML API)
 ML_SERVICE_URL=http://127.0.0.1:8000/predict
+<<<<<<< HEAD
 ML_ANALYZE_URL=http://127.0.0.1:8000/analyze
 ```
 
@@ -319,6 +374,10 @@ OPENROUTER_MODEL=google/gemini-2.0-flash-001
 
 > 💡 Get your free OpenRouter API key at [openrouter.ai/keys](https://openrouter.ai/keys)
 
+=======
+```
+
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 ### Database Setup
 
 1. Go to your **Supabase Dashboard** → **SQL Editor**
@@ -341,7 +400,11 @@ cd ml_model
 python api.py
 ```
 
+<<<<<<< HEAD
 > Starts on `http://localhost:8000` — Loads RoBERTa model + connects to OpenRouter AI for multimodal analysis
+=======
+> Starts on `http://localhost:8000` — Loads the RoBERTa model and serves predictions
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 
 **Terminal 2 — Backend API (Node.js)**
 
@@ -402,6 +465,7 @@ The ML API is built with **FastAPI** and exposes:
 
 | Endpoint | Method | Description |
 |---|---|---|
+<<<<<<< HEAD
 | `/predict` | POST | Classify text as spam/safe (RoBERTa only, backward compatible) |
 | `/analyze` | POST | **Combined analysis** — RoBERTa ML + Gemini AI (text + image) |
 | `/analyze/ai` | POST | AI-only analysis via OpenRouter (text + image) |
@@ -453,6 +517,29 @@ The ML API is built with **FastAPI** and exposes:
 | `malware` | Links to malicious software |
 | `safe` | Content appears legitimate |
 
+=======
+| `/predict` | POST | Classify text as spam/safe |
+| `/health` | GET | Health check + model status |
+
+**Prediction Request:**
+```json
+{
+  "text": "Click here to win $5000!",
+  "image_url": null
+}
+```
+
+**Prediction Response:**
+```json
+{
+  "is_scam": true,
+  "confidence": 0.9542,
+  "reason": "Text classified as spam/scam (confidence: 95.4%)",
+  "label": "spam"
+}
+```
+
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 ---
 
 ## 📡 API Endpoints
@@ -515,6 +602,7 @@ Access the admin panel at `/admin/login` with the default credentials:
 
 ## 🔧 Scam Detection Pipeline
 
+<<<<<<< HEAD
 When a user creates a post, it goes through this triple-layer pipeline:
 
 ```
@@ -559,6 +647,43 @@ User submits post (text + optional image)
 - If **ML is unavailable** → Falls back to Pattern only
 - **Rate limit auto-retry** → 3 retries with exponential backoff (2s, 4s, 8s)
 
+=======
+When a user creates a post, it goes through this pipeline:
+
+```
+User submits post
+        │
+        ▼
+┌───────────────────────┐
+│   Parallel Detection   │
+├───────────┬───────────┤
+│  ML Model │  Pattern  │
+│ (RoBERTa) │  Rules    │
+└─────┬─────┴─────┬─────┘
+      │           │
+      ▼           ▼
+┌─────────────────────────┐
+│  Combine Results        │
+│  (Highest confidence    │
+│   wins)                 │
+└────────────┬────────────┘
+             │
+      ┌──────┴──────┐
+      │              │
+  is_scam?       is_safe?
+      │              │
+      ▼              ▼
+┌──────────┐  ┌───────────┐
+│ PENDING  │  │ APPROVED  │
+│ (Review) │  │ (Visible) │
+└──────────┘  └───────────┘
+```
+
+### Detection Sources:
+- **ML Model**: Catches toxicity, threats, classic spam via learned patterns
+- **Pattern Rules**: Catches phishing URLs, suspicious domains, scam keywords, and known phrases
+
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 ---
 
 ## 🤝 Contributing
@@ -573,6 +698,7 @@ Contributions are welcome! Here's how to get started:
 
 ---
 
+<<<<<<< HEAD
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
@@ -585,6 +711,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+=======
+>>>>>>> 15ffdab3df0028316dea5208a69695ddeb096551
 <p align="center">
   Made with ❤️ for a safer social media experience
 </p>
