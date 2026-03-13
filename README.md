@@ -572,7 +572,3 @@ Contributions are welcome! Here's how to get started:
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
 
-
-<p align="center">
-  Made with ❤️ for a safer social media experience
-</p>
