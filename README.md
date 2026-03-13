@@ -572,19 +572,6 @@ Contributions are welcome! Here's how to get started:
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
 
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 👤 Authors
-
-- **Subbareddy** — [@Subbareddy2004](https://github.com/Subbareddy2004)
-
----
 
 <p align="center">
   Made with ❤️ for a safer social media experience
